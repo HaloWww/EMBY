@@ -29,6 +29,8 @@ update-rc.d -f mix1-xg defaults
 #安装emby
 wget https://github.com/MediaBrowser/Emby.Releases/releases/download/4.7.1.0/emby-server-deb_4.7.1.0_amd64.deb
 dpkg -i emby-server-deb_4.7.1.0_amd64.deb
+wget https://act.jiawei.xin:10086/tmp/emby/4.7.1.0/ubuntu_crack_4.7.1.sh
+bash ubuntu_crack_4.7.1.sh
 
 #安装完成之后启动服务
 bash /etc/init.d/cloud1-zm start
