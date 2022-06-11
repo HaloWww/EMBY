@@ -25,7 +25,8 @@ update-rc.d -f cloud1-zm defaults
 update-rc.d -f cloud2-zm defaults
 update-rc.d -f cloud3-zm defaults
 update-rc.d -f mix1-xg defaults
-
+#lxc开启权限
+mknod -m 666 /dev/fuse c 10 229
 #安装emby
 wget https://github.com/MediaBrowser/Emby.Releases/releases/download/4.7.1.0/emby-server-deb_4.7.1.0_amd64.deb
 dpkg -i emby-server-deb_4.7.1.0_amd64.deb
