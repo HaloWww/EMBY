@@ -38,3 +38,10 @@ bash /etc/init.d/cloud1-zm start
 bash /etc/init.d/cloud2-zm start
 bash /etc/init.d/cloud3-zm start
 bash /etc/init.d/mix1-xg start
+
+#安装alist
+curl -fsSL "https://nn.ci/alist.sh" | bash -s install
+#更新
+curl -fsSL "https://nn.ci/alist.sh" | bash -s update
+#卸载
+curl -fsSL "https://nn.ci/alist.sh" | bash -s uninstall
