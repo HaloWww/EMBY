@@ -5,26 +5,46 @@ curl https://rclone.org/install.sh | sudo bash
 mkdir /home/cloud1-zm
 mkdir /home/cloud2-zm
 mkdir /home/cloud3-zm
+mkdir /home/cloud4-zm
+mkdir /home/cloud5-zm
+mkdir /home/cloud6-zm
 mkdir /home/mix1-xg
+mkdir /home/mix2-xg
 #创建rclone配置目录
 mkdir -p /root/.config/rclone
 #添加rclone开机自启
 wget https://raw.githubusercontent.com/HaloWww/EMBY/main/rclone/cloud1-zm
 wget https://raw.githubusercontent.com/HaloWww/EMBY/main/rclone/cloud2-zm
 wget https://raw.githubusercontent.com/HaloWww/EMBY/main/rclone/cloud3-zm
+wget https://raw.githubusercontent.com/HaloWww/EMBY/main/rclone/cloud4-zm
+wget https://raw.githubusercontent.com/HaloWww/EMBY/main/rclone/cloud5-zm
+wget https://raw.githubusercontent.com/HaloWww/EMBY/main/rclone/cloud6-zm
 wget https://raw.githubusercontent.com/HaloWww/EMBY/main/rclone/mix1-xg
+wget https://raw.githubusercontent.com/HaloWww/EMBY/main/rclone/mix2-xg
 mv ./cloud1-zm /etc/init.d/cloud1-zm
 mv ./cloud2-zm /etc/init.d/cloud2-zm
 mv ./cloud3-zm /etc/init.d/cloud3-zm
+mv ./cloud4-zm /etc/init.d/cloud4-zm
+mv ./cloud5-zm /etc/init.d/cloud5-zm
+mv ./cloud6-zm /etc/init.d/cloud6-zm
 mv ./mix1-xg /etc/init.d/mix1-xg
+mv ./mix2-xg /etc/init.d/mix2-xg
 chmod +x /etc/init.d/cloud1-zm
 chmod +x /etc/init.d/cloud2-zm
 chmod +x /etc/init.d/cloud3-zm
+chmod +x /etc/init.d/cloud4-zm
+chmod +x /etc/init.d/cloud5-zm
+chmod +x /etc/init.d/cloud6-zm
 chmod +x /etc/init.d/mix1-xg
+chmod +x /etc/init.d/mix2-xg
 update-rc.d -f cloud1-zm defaults
 update-rc.d -f cloud2-zm defaults
 update-rc.d -f cloud3-zm defaults
+update-rc.d -f cloud4-zm defaults
+update-rc.d -f cloud5-zm defaults
+update-rc.d -f cloud6-zm defaults
 update-rc.d -f mix1-xg defaults
+update-rc.d -f mix2-xg defaults
 #lxc开启权限
 mknod -m 666 /dev/fuse c 10 229
 #安装emby
@@ -37,7 +57,11 @@ bash ubuntu_crack_4.7.1.sh
 bash /etc/init.d/cloud1-zm start
 bash /etc/init.d/cloud2-zm start
 bash /etc/init.d/cloud3-zm start
+bash /etc/init.d/cloud4-zm start
+bash /etc/init.d/cloud5-zm start
+bash /etc/init.d/cloud6-zm start
 bash /etc/init.d/mix1-xg start
+bash /etc/init.d/mix2-xg start
 
 #安装alist
 curl -fsSL "https://nn.ci/alist.sh" | bash -s install
