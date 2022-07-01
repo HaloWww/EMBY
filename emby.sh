@@ -8,6 +8,15 @@ mkdir /home/cloud3-zm
 mkdir /home/cloud4-zm
 mkdir /home/cloud5-zm
 mkdir /home/cloud6-zm
+mkdir /home/cloud7-zm
+mkdir /home/cloud8-zm
+mkdir /home/cloud9-zm
+mkdir /home/cloud10-zm
+mkdir /home/cloud11-zm
+mkdir /home/cloud12-zm
+mkdir /home/cloud13-zm
+mkdir /home/cloud14-zm
+mkdir /home/cloud15-zm
 mkdir /home/mix1-xg
 mkdir /home/mix2-xg
 #创建rclone配置目录
@@ -19,6 +28,15 @@ wget https://raw.githubusercontent.com/HaloWww/EMBY/main/rclone/cloud3-zm
 wget https://raw.githubusercontent.com/HaloWww/EMBY/main/rclone/cloud4-zm
 wget https://raw.githubusercontent.com/HaloWww/EMBY/main/rclone/cloud5-zm
 wget https://raw.githubusercontent.com/HaloWww/EMBY/main/rclone/cloud6-zm
+wget https://raw.githubusercontent.com/HaloWww/EMBY/main/rclone/cloud7-zm
+wget https://raw.githubusercontent.com/HaloWww/EMBY/main/rclone/cloud8-zm
+wget https://raw.githubusercontent.com/HaloWww/EMBY/main/rclone/cloud9-zm
+wget https://raw.githubusercontent.com/HaloWww/EMBY/main/rclone/cloud10-zm
+wget https://raw.githubusercontent.com/HaloWww/EMBY/main/rclone/cloud11-zm
+wget https://raw.githubusercontent.com/HaloWww/EMBY/main/rclone/cloud12-zm
+wget https://raw.githubusercontent.com/HaloWww/EMBY/main/rclone/cloud13-zm
+wget https://raw.githubusercontent.com/HaloWww/EMBY/main/rclone/cloud14-zm
+wget https://raw.githubusercontent.com/HaloWww/EMBY/main/rclone/cloud15-zm
 wget https://raw.githubusercontent.com/HaloWww/EMBY/main/rclone/mix1-xg
 wget https://raw.githubusercontent.com/HaloWww/EMBY/main/rclone/mix2-xg
 mv ./cloud1-zm /etc/init.d/cloud1-zm
@@ -27,6 +45,15 @@ mv ./cloud3-zm /etc/init.d/cloud3-zm
 mv ./cloud4-zm /etc/init.d/cloud4-zm
 mv ./cloud5-zm /etc/init.d/cloud5-zm
 mv ./cloud6-zm /etc/init.d/cloud6-zm
+mv ./cloud4-zm /etc/init.d/cloud7-zm
+mv ./cloud1-zm /etc/init.d/cloud8-zm
+mv ./cloud2-zm /etc/init.d/cloud9-zm
+mv ./cloud3-zm /etc/init.d/cloud10-zm
+mv ./cloud1-zm /etc/init.d/cloud11-zm
+mv ./cloud2-zm /etc/init.d/cloud12-zm
+mv ./cloud3-zm /etc/init.d/cloud13-zm
+mv ./cloud4-zm /etc/init.d/cloud14-zm
+mv ./cloud5-zm /etc/init.d/cloud15-zm
 mv ./mix1-xg /etc/init.d/mix1-xg
 mv ./mix2-xg /etc/init.d/mix2-xg
 chmod +x /etc/init.d/cloud1-zm
@@ -35,6 +62,15 @@ chmod +x /etc/init.d/cloud3-zm
 chmod +x /etc/init.d/cloud4-zm
 chmod +x /etc/init.d/cloud5-zm
 chmod +x /etc/init.d/cloud6-zm
+chmod +x /etc/init.d/cloud7-zm
+chmod +x /etc/init.d/cloud8-zm
+chmod +x /etc/init.d/cloud9-zm
+chmod +x /etc/init.d/cloud10-zm
+chmod +x /etc/init.d/cloud11-zm
+chmod +x /etc/init.d/cloud12-zm
+chmod +x /etc/init.d/cloud13-zm
+chmod +x /etc/init.d/cloud14-zm
+chmod +x /etc/init.d/cloud15-zm
 chmod +x /etc/init.d/mix1-xg
 chmod +x /etc/init.d/mix2-xg
 update-rc.d -f cloud1-zm defaults
@@ -43,6 +79,15 @@ update-rc.d -f cloud3-zm defaults
 update-rc.d -f cloud4-zm defaults
 update-rc.d -f cloud5-zm defaults
 update-rc.d -f cloud6-zm defaults
+update-rc.d -f cloud7-zm defaults
+update-rc.d -f cloud8-zm defaults
+update-rc.d -f cloud9-zm defaults
+update-rc.d -f cloud10-zm defaults
+update-rc.d -f cloud11-zm defaults
+update-rc.d -f cloud12-zm defaults
+update-rc.d -f cloud13-zm defaults
+update-rc.d -f cloud14-zm defaults
+update-rc.d -f cloud15-zm defaults
 update-rc.d -f mix1-xg defaults
 update-rc.d -f mix2-xg defaults
 #lxc开启权限
