@@ -39,23 +39,23 @@ wget https://raw.githubusercontent.com/HaloWww/EMBY/main/rclone/cloud14-zm
 wget https://raw.githubusercontent.com/HaloWww/EMBY/main/rclone/cloud15-zm
 wget https://raw.githubusercontent.com/HaloWww/EMBY/main/rclone/mix1-xg
 wget https://raw.githubusercontent.com/HaloWww/EMBY/main/rclone/mix2-xg
-mv ./cloud1-zm /etc/init.d/cloud1-zm
-mv ./cloud2-zm /etc/init.d/cloud2-zm
-mv ./cloud3-zm /etc/init.d/cloud3-zm
-mv ./cloud4-zm /etc/init.d/cloud4-zm
-mv ./cloud5-zm /etc/init.d/cloud5-zm
-mv ./cloud6-zm /etc/init.d/cloud6-zm
-mv ./cloud7-zm /etc/init.d/cloud7-zm
-mv ./cloud8-zm /etc/init.d/cloud8-zm
-mv ./cloud9-zm /etc/init.d/cloud9-zm
-mv ./cloud10-zm /etc/init.d/cloud10-zm
-mv ./cloud11-zm /etc/init.d/cloud11-zm
-mv ./cloud12-zm /etc/init.d/cloud12-zm
-mv ./cloud13-zm /etc/init.d/cloud13-zm
-mv ./cloud14-zm /etc/init.d/cloud14-zm
-mv ./cloud15-zm /etc/init.d/cloud15-zm
-mv ./mix1-xg /etc/init.d/mix1-xg
-mv ./mix2-xg /etc/init.d/mix2-xg
+mv -f ./cloud1-zm /etc/init.d/cloud1-zm
+mv -f ./cloud2-zm /etc/init.d/cloud2-zm
+mv -f ./cloud3-zm /etc/init.d/cloud3-zm
+mv -f ./cloud4-zm /etc/init.d/cloud4-zm
+mv -f ./cloud5-zm /etc/init.d/cloud5-zm
+mv -f ./cloud6-zm /etc/init.d/cloud6-zm
+mv -f ./cloud7-zm /etc/init.d/cloud7-zm
+mv -f ./cloud8-zm /etc/init.d/cloud8-zm
+mv -f ./cloud9-zm /etc/init.d/cloud9-zm
+mv -f ./cloud10-zm /etc/init.d/cloud10-zm
+mv -f ./cloud11-zm /etc/init.d/cloud11-zm
+mv -f ./cloud12-zm /etc/init.d/cloud12-zm
+mv -f ./cloud13-zm /etc/init.d/cloud13-zm
+mv -f ./cloud14-zm /etc/init.d/cloud14-zm
+mv -f ./cloud15-zm /etc/init.d/cloud15-zm
+mv -f ./mix1-xg /etc/init.d/mix1-xg
+mv -f ./mix2-xg /etc/init.d/mix2-xg
 chmod +x /etc/init.d/cloud1-zm
 chmod +x /etc/init.d/cloud2-zm
 chmod +x /etc/init.d/cloud3-zm
