@@ -39,7 +39,7 @@ do_start(){
 		fusermount -zuq $LOCAL >/dev/null 2>&1
 		mkdir -p $LOCAL
 		mkdir -p ${LOG%/*}
-		sudo /usr/bin/rclone mount -vv $NAME:$REMOTE $LOCAL --copy-links --no-gzip-encoding --no-check-certificate --allow-other --allow-non-empty --umask 000 --default-permissions --dir-cache-time 300s --vfs-read-chunk-size 256M --vfs-read-chunk-size-limit 2G --buffer-size 256M > "${LOG}" 2>&1 &
+		sudo /usr/bin/rclone mount -vv $NAME:$REMOTE $LOCAL --copy-links --no-gzip-encoding --no-check-certificate --allow-other --allow-non-empty --umask 000 --default-permissions --dir-cache-time 12h --vfs-read-chunk-size 256M --vfs-read-chunk-size-limit 2G --buffer-size 256M > "${LOG}" 2>&1 &
 		sleep 2s
 		check_running
 		if [[ $? -eq 0 ]]; then
