@@ -1,0 +1,165 @@
+#!/bin/bash
+
+PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin
+export PATH
+NAME_BIN="rclone"
+### BEGIN INIT INFO
+# Provides:          rclone
+# Required-Start:    $all
+# Required-Stop:     $all
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: Start rclone at boot time
+# Description:       Enable rclone by daemon.
+### END INIT INFO
+
+NAME="cloud17-zm" #Rclone配置时填写的name
+REMOTE=''  #远程文件夹，网盘里的挂载的一个文件夹，留空为整个网盘
+LOCAL='/home/cloud17-zm'  #挂载地址，VPS本地挂载目录
+LOG="/$HOME/.rclone/rcloned.log"
+
+Green_font_prefix="\033[32m" && Red_font_prefix="\033[31m" && Green_background_prefix="\033[42;37m" && Red_background_prefix="\033[41;37m" && Font_color_suffix="\033[0m"
+Info="${Green_font_prefix}[信息]${Font_color_suffix}"
+Error="${Red_font_prefix}[错误]${Font_color_suffix}"
+RETVAL=0
+
+check_running(){
+	PID="$(ps -C $NAME_BIN -o pid= |head -n1 |grep -o '[0-9]\{1,\}')"
+	if [[ ! -z ${PID} ]]; then
+		return 0
+	else
+		return 1
+	fi
+}
+do_start(){
+	check_running
+	if [[ $? -eq 0 ]]; then
+		echo -e "${Info} $NAME_BIN (PID ${PID}) 正在运行..." && exit 0
+	else
+		fusermount -zuq $LOCAL >/dev/null 2>&1
+		mkdir -p $LOCAL
+		mkdir -p ${LOG%/*}
+		sudo /usr/bin/rclone mount -vv cloud1-zm:$REMOTE /home/cloud1-zm --copy-links --no-gzip-encoding --no-check-certificate --allow-other --allow-non-empty --umask 000 --default-permissions --vfs-read-chunk-size 256M --vfs-read-chunk-size-limit 2G --buffer-size 256M > "${LOG}" 2>&1 &
+		sleep 5s
+		sudo /usr/bin/rclone mount -vv cloud1-zm:$REMOTE /home/cloud1-zm --copy-links --no-gzip-encoding --no-check-certificate --allow-other --allow-non-empty --umask 000 --default-permissions --vfs-read-chunk-size 256M --vfs-read-chunk-size-limit 2G --buffer-size 256M > "${LOG}" 2>&1 &
+		sleep 5s
+		sudo /usr/bin/rclone mount -vv cloud2-zm:$REMOTE /home/cloud2-zm --copy-links --no-gzip-encoding --no-check-certificate --allow-other --allow-non-empty --umask 000 --default-permissions --vfs-read-chunk-size 256M --vfs-read-chunk-size-limit 2G --buffer-size 256M > "${LOG}" 2>&1 &
+		sleep 5s
+		sudo /usr/bin/rclone mount -vv cloud3-zm:$REMOTE /home/cloud3-zm --copy-links --no-gzip-encoding --no-check-certificate --allow-other --allow-non-empty --umask 000 --default-permissions --vfs-read-chunk-size 256M --vfs-read-chunk-size-limit 2G --buffer-size 256M > "${LOG}" 2>&1 &
+		sleep 5s
+		sudo /usr/bin/rclone mount -vv cloud4-zm:$REMOTE /home/cloud4-zm --copy-links --no-gzip-encoding --no-check-certificate --allow-other --allow-non-empty --umask 000 --default-permissions --vfs-read-chunk-size 256M --vfs-read-chunk-size-limit 2G --buffer-size 256M > "${LOG}" 2>&1 &
+		sleep 5s
+		sudo /usr/bin/rclone mount -vv cloud5-zm:$REMOTE /home/cloud5-zm --copy-links --no-gzip-encoding --no-check-certificate --allow-other --allow-non-empty --umask 000 --default-permissions --vfs-read-chunk-size 256M --vfs-read-chunk-size-limit 2G --buffer-size 256M > "${LOG}" 2>&1 &
+		sleep 5s
+		sudo /usr/bin/rclone mount -vv cloud6-zm:$REMOTE /home/cloud6-zm --copy-links --no-gzip-encoding --no-check-certificate --allow-other --allow-non-empty --umask 000 --default-permissions --vfs-read-chunk-size 256M --vfs-read-chunk-size-limit 2G --buffer-size 256M > "${LOG}" 2>&1 &
+		sleep 5s
+		sudo /usr/bin/rclone mount -vv cloud7-zm:$REMOTE /home/cloud7-zm --copy-links --no-gzip-encoding --no-check-certificate --allow-other --allow-non-empty --umask 000 --default-permissions --vfs-read-chunk-size 256M --vfs-read-chunk-size-limit 2G --buffer-size 256M > "${LOG}" 2>&1 &
+		sleep 5s
+		sudo /usr/bin/rclone mount -vv cloud8-zm:$REMOTE /home/cloud8-zm --copy-links --no-gzip-encoding --no-check-certificate --allow-other --allow-non-empty --umask 000 --default-permissions --vfs-read-chunk-size 256M --vfs-read-chunk-size-limit 2G --buffer-size 256M > "${LOG}" 2>&1 &
+		sleep 5s
+		sudo /usr/bin/rclone mount -vv cloud9-zm:$REMOTE /home/cloud9-zm --copy-links --no-gzip-encoding --no-check-certificate --allow-other --allow-non-empty --umask 000 --default-permissions --vfs-read-chunk-size 256M --vfs-read-chunk-size-limit 2G --buffer-size 256M > "${LOG}" 2>&1 &
+		sleep 5s
+		sudo /usr/bin/rclone mount -vv cloud10-zm:$REMOTE /home/cloud10-zm --copy-links --no-gzip-encoding --no-check-certificate --allow-other --allow-non-empty --umask 000 --default-permissions --vfs-read-chunk-size 256M --vfs-read-chunk-size-limit 2G --buffer-size 256M > "${LOG}" 2>&1 &
+		sleep 5s
+		sudo /usr/bin/rclone mount -vv cloud11-zm:$REMOTE /home/cloud11-zm --copy-links --no-gzip-encoding --no-check-certificate --allow-other --allow-non-empty --umask 000 --default-permissions --vfs-read-chunk-size 256M --vfs-read-chunk-size-limit 2G --buffer-size 256M > "${LOG}" 2>&1 &
+		sleep 5s
+		sudo /usr/bin/rclone mount -vv cloud12-zm:$REMOTE /home/cloud12-zm --copy-links --no-gzip-encoding --no-check-certificate --allow-other --allow-non-empty --umask 000 --default-permissions --vfs-read-chunk-size 256M --vfs-read-chunk-size-limit 2G --buffer-size 256M > "${LOG}" 2>&1 &
+		sleep 5s
+		sudo /usr/bin/rclone mount -vv cloud13-zm:$REMOTE /home/cloud13-zm --copy-links --no-gzip-encoding --no-check-certificate --allow-other --allow-non-empty --umask 000 --default-permissions --vfs-read-chunk-size 256M --vfs-read-chunk-size-limit 2G --buffer-size 256M > "${LOG}" 2>&1 &
+		sleep 5s
+		sudo /usr/bin/rclone mount -vv cloud14-zm:$REMOTE /home/cloud14-zm --copy-links --no-gzip-encoding --no-check-certificate --allow-other --allow-non-empty --umask 000 --default-permissions --vfs-read-chunk-size 256M --vfs-read-chunk-size-limit 2G --buffer-size 256M > "${LOG}" 2>&1 &
+		sleep 5s
+		sudo /usr/bin/rclone mount -vv cloud15-zm:$REMOTE /home/cloud15-zm --copy-links --no-gzip-encoding --no-check-certificate --allow-other --allow-non-empty --umask 000 --default-permissions --vfs-read-chunk-size 256M --vfs-read-chunk-size-limit 2G --buffer-size 256M > "${LOG}" 2>&1 &
+		sleep 5s
+		sudo /usr/bin/rclone mount -vv cloud16-wa:$REMOTE /home/cloud16-wa --copy-links --no-gzip-encoding --no-check-certificate --allow-other --allow-non-empty --umask 000 --default-permissions --vfs-read-chunk-size 256M --vfs-read-chunk-size-limit 2G --buffer-size 256M > "${LOG}" 2>&1 &
+		sleep 5s
+		sudo /usr/bin/rclone mount -vv cloud17-wa:$REMOTE /home/cloud17-wa --copy-links --no-gzip-encoding --no-check-certificate --allow-other --allow-non-empty --umask 000 --default-permissions --vfs-read-chunk-size 256M --vfs-read-chunk-size-limit 2G --buffer-size 256M > "${LOG}" 2>&1 &
+		sleep 5s
+		sudo /usr/bin/rclone mount -vv cloud18-wa:$REMOTE /home/cloud18-wa --copy-links --no-gzip-encoding --no-check-certificate --allow-other --allow-non-empty --umask 000 --default-permissions --vfs-read-chunk-size 256M --vfs-read-chunk-size-limit 2G --buffer-size 256M > "${LOG}" 2>&1 &
+		sleep 5s
+		sudo /usr/bin/rclone mount -vv cloud19-wa:$REMOTE /home/cloud19-wa --copy-links --no-gzip-encoding --no-check-certificate --allow-other --allow-non-empty --umask 000 --default-permissions --vfs-read-chunk-size 256M --vfs-read-chunk-size-limit 2G --buffer-size 256M > "${LOG}" 2>&1 &
+		sleep 5s
+		sudo /usr/bin/rclone mount -vv cloud20-wa:$REMOTE /home/cloud20-wa --copy-links --no-gzip-encoding --no-check-certificate --allow-other --allow-non-empty --umask 000 --default-permissions --vfs-read-chunk-size 256M --vfs-read-chunk-size-limit 2G --buffer-size 256M > "${LOG}" 2>&1 &
+		sleep 5s
+		sudo /usr/bin/rclone mount -vv cloud21-wa:$REMOTE /home/cloud21-wa --copy-links --no-gzip-encoding --no-check-certificate --allow-other --allow-non-empty --umask 000 --default-permissions --vfs-read-chunk-size 256M --vfs-read-chunk-size-limit 2G --buffer-size 256M > "${LOG}" 2>&1 &
+		sleep 5s
+		sudo /usr/bin/rclone mount -vv cloud22-wa:$REMOTE /home/cloud22-wa --copy-links --no-gzip-encoding --no-check-certificate --allow-other --allow-non-empty --umask 000 --default-permissions --vfs-read-chunk-size 256M --vfs-read-chunk-size-limit 2G --buffer-size 256M > "${LOG}" 2>&1 &
+		sleep 5s
+		sudo /usr/bin/rclone mount -vv cloud23-wa:$REMOTE /home/cloud23-wa --copy-links --no-gzip-encoding --no-check-certificate --allow-other --allow-non-empty --umask 000 --default-permissions --vfs-read-chunk-size 256M --vfs-read-chunk-size-limit 2G --buffer-size 256M > "${LOG}" 2>&1 &
+		sleep 5s
+		sudo /usr/bin/rclone mount -vv cloud24-wa:$REMOTE /home/cloud24-wa --copy-links --no-gzip-encoding --no-check-certificate --allow-other --allow-non-empty --umask 000 --default-permissions --vfs-read-chunk-size 256M --vfs-read-chunk-size-limit 2G --buffer-size 256M > "${LOG}" 2>&1 &
+		sleep 5s
+		sudo /usr/bin/rclone mount -vv cloud25-wa:$REMOTE /home/cloud25-wa --copy-links --no-gzip-encoding --no-check-certificate --allow-other --allow-non-empty --umask 000 --default-permissions --vfs-read-chunk-size 256M --vfs-read-chunk-size-limit 2G --buffer-size 256M > "${LOG}" 2>&1 &
+		sleep 5s
+		sudo /usr/bin/rclone mount -vv auto1-wa:$REMOTE /home/auto1-wa --copy-links --no-gzip-encoding --no-check-certificate --allow-other --allow-non-empty --umask 000 --default-permissions --vfs-read-chunk-size 256M --vfs-read-chunk-size-limit 2G --buffer-size 256M > "${LOG}" 2>&1 &
+		sleep 5s
+		sudo /usr/bin/rclone mount -vv auto2-wa:$REMOTE /home/auto2-wa --copy-links --no-gzip-encoding --no-check-certificate --allow-other --allow-non-empty --umask 000 --default-permissions --vfs-read-chunk-size 256M --vfs-read-chunk-size-limit 2G --buffer-size 256M > "${LOG}" 2>&1 &
+		sleep 5s
+		sudo /usr/bin/rclone mount -vv auto3-wa:$REMOTE /home/auto3-wa --copy-links --no-gzip-encoding --no-check-certificate --allow-other --allow-non-empty --umask 000 --default-permissions --vfs-read-chunk-size 256M --vfs-read-chunk-size-limit 2G --buffer-size 256M > "${LOG}" 2>&1 &
+		sleep 5s
+		sudo /usr/bin/rclone mount -vv auto4-wa:$REMOTE /home/auto4-wa --copy-links --no-gzip-encoding --no-check-certificate --allow-other --allow-non-empty --umask 000 --default-permissions --vfs-read-chunk-size 256M --vfs-read-chunk-size-limit 2G --buffer-size 256M > "${LOG}" 2>&1 &
+		sleep 5s
+		sudo /usr/bin/rclone mount -vv auto5-wa:$REMOTE /home/auto5-wa --copy-links --no-gzip-encoding --no-check-certificate --allow-other --allow-non-empty --umask 000 --default-permissions --vfs-read-chunk-size 256M --vfs-read-chunk-size-limit 2G --buffer-size 256M > "${LOG}" 2>&1 &
+		sleep 5s
+		sudo /usr/bin/rclone mount -vv auto6-wa:$REMOTE /home/auto6-wa --copy-links --no-gzip-encoding --no-check-certificate --allow-other --allow-non-empty --umask 000 --default-permissions --vfs-read-chunk-size 256M --vfs-read-chunk-size-limit 2G --buffer-size 256M > "${LOG}" 2>&1 &
+		sleep 5s
+		sudo /usr/bin/rclone mount -vv auto7-wa:$REMOTE /home/auto7-wa --copy-links --no-gzip-encoding --no-check-certificate --allow-other --allow-non-empty --umask 000 --default-permissions --vfs-read-chunk-size 256M --vfs-read-chunk-size-limit 2G --buffer-size 256M > "${LOG}" 2>&1 &
+		sleep 5s
+		sudo /usr/bin/rclone mount -vv auto8-wa:$REMOTE /home/auto8-wa --copy-links --no-gzip-encoding --no-check-certificate --allow-other --allow-non-empty --umask 000 --default-permissions --vfs-read-chunk-size 256M --vfs-read-chunk-size-limit 2G --buffer-size 256M > "${LOG}" 2>&1 &
+		sleep 5s
+		sudo /usr/bin/rclone mount -vv auto9-wa:$REMOTE /home/auto9-wa --copy-links --no-gzip-encoding --no-check-certificate --allow-other --allow-non-empty --umask 000 --default-permissions --vfs-read-chunk-size 256M --vfs-read-chunk-size-limit 2G --buffer-size 256M > "${LOG}" 2>&1 &
+		sleep 5s
+		sudo /usr/bin/rclone mount -vv auto10-wa:$REMOTE /home/auto10-wa --copy-links --no-gzip-encoding --no-check-certificate --allow-other --allow-non-empty --umask 000 --default-permissions --vfs-read-chunk-size 256M --vfs-read-chunk-size-limit 2G --buffer-size 256M > "${LOG}" 2>&1 &
+		sleep 5s
+		sudo /usr/bin/rclone mount -vv mix1-xg:$REMOTE /home/mix1-xg --copy-links --no-gzip-encoding --no-check-certificate --allow-other --allow-non-empty --umask 000 --default-permissions --vfs-read-chunk-size 256M --vfs-read-chunk-size-limit 2G --buffer-size 256M > "${LOG}" 2>&1 &
+		sleep 5s
+		sudo /usr/bin/rclone mount -vv mix2-xg:$REMOTE /home/mix2-xg --copy-links --no-gzip-encoding --no-check-certificate --allow-other --allow-non-empty --umask 000 --default-permissions --vfs-read-chunk-size 256M --vfs-read-chunk-size-limit 2G --buffer-size 256M > "${LOG}" 2>&1 &
+		sleep 5s
+		check_running
+		if [[ $? -eq 0 ]]; then
+			echo -e "${Info} $NAME_BIN 启动成功 !"
+		else
+			echo -e "${Error} $NAME_BIN 启动失败 !"
+		fi
+	fi
+}
+do_stop(){
+	check_running
+	if [[ $? -eq 0 ]]; then
+		kill -9 ${PID}
+		RETVAL=$?
+		if [[ $RETVAL -eq 0 ]]; then
+			echo -e "${Info} $NAME_BIN 停止成功 !"
+		else
+			echo -e "${Error} $NAME_BIN 停止失败 !"
+		fi
+	else
+		echo -e "${Info} $NAME_BIN 未运行"
+		RETVAL=1
+	fi
+	fusermount -zuq $LOCAL >/dev/null 2>&1
+}
+do_status(){
+	check_running
+	if [[ $? -eq 0 ]]; then
+		echo -e "${Info} $NAME_BIN (PID $(echo ${PID})) 正在运行..."
+	else
+		echo -e "${Info} $NAME_BIN 未运行 !"
+		RETVAL=1
+	fi
+}
+do_restart(){
+	do_stop
+	sleep 2s
+	do_start
+}
+case "$1" in
+	start|stop|restart|status)
+	do_$1
+	;;
+	*)
+	echo "使用方法: $0 { start | stop | restart | status }"
+	RETVAL=1
+	;;
+esac
+exit $RETVAL
