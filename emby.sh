@@ -120,6 +120,9 @@ mv -f ./auto10-wa /etc/init.d/auto10-wa
 mv -f ./mix1-xg /etc/init.d/mix1-xg
 mv -f ./mix2-xg /etc/init.d/mix2-xg
 
+chmod +x /etc/init.d/cloud-all
+update-rc.d -f cloud-all defaults
+
 chmod +x /etc/init.d/cloud1-zm
 chmod +x /etc/init.d/cloud2-zm
 chmod +x /etc/init.d/cloud3-zm
