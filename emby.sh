@@ -1,5 +1,5 @@
 #!/bin/bash
-vim /root/.config/rclone/rclone.conf
+nano /root/.config/rclone/rclone.conf
 #安装rclone
 curl https://rclone.org/install.sh | sudo bash
 #创建rclone挂载目录
