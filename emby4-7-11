@@ -2,17 +2,25 @@
 echo "ubuntu一键破解脚本，适4.7.5版本"
 echo "-------------------web端破解-------------------"
 rm -f /opt/emby-server/system/Emby.Web.dll
-wget -P /opt/emby-server/system/ https://act.jiawei.xin:10086/tmp/emby/4.7.5.0/linux64_docker64_4.7.5/Emby.Web.dll
+wget -P /opt/emby-server/system/ https://raw.githubusercontent.com/HaloWww/EMBY/main/emby4711/Emby.Web.dll
 rm -f /opt/emby-server/system/MediaBrowser.Model.dll
-wget -P /opt/emby-server/system/ https://act.jiawei.xin:10086/tmp/emby/4.7.5.0/linux64_docker64_4.7.5/MediaBrowser.Model.dll
+wget -P /opt/emby-server/system/ https://raw.githubusercontent.com/HaloWww/EMBY/main/emby4711/MediaBrowser.Model.dll
 echo "核心破解完成..."
 rm -f /opt/emby-server/system/dashboard-ui/modules/emby-apiclient/connectionmanager.js
-wget -P /opt/emby-server/system/dashboard-ui/modules/emby-apiclient/ https://act.jiawei.xin:10086/tmp/emby/4.7.5.0/linux64_docker64_4.7.5/dashboard-ui/modules/emby-apiclient/connectionmanager.js
+wget -P /opt/emby-server/system/dashboard-ui/modules/emby-apiclient/ https://raw.githubusercontent.com/HaloWww/EMBY/main/emby4711/dashboard-ui/modules/emby-apiclient/connectionmanager.js
 rm -f /opt/emby-server/system/dashboard-ui/embypremiere/embypremiere.js
-wget -P /opt/emby-server/system/dashboard-ui/embypremiere/ https://act.jiawei.xin:10086/tmp/emby/4.7.5.0/linux64_docker64_4.7.5/dashboard-ui/embypremiere/embypremiere.js
+wget -P /opt/emby-server/system/dashboard-ui/embypremiere/ https://raw.githubusercontent.com/HaloWww/EMBY/main/emby4711/dashboard-ui/embypremiere/embypremiere.js
+rm -f /opt/emby-server/system/dashboard-ui/modules/themes/dark/theme.css
+wget -P https://raw.githubusercontent.com/HaloWww/EMBY/main/emby4711/dashboard-ui/modules/themes/dark/theme.css
+rm -f /opt/emby-server/system/dashboard-ui/modules/themes/dark/theme.json
+wget -P https://raw.githubusercontent.com/HaloWww/EMBY/main/emby4711/dashboard-ui/modules/themes/dark/theme.json
+rm -f /opt/emby-server/system/dashboard-ui/modules/themes/light/theme.css
+wget -P https://raw.githubusercontent.com/HaloWww/EMBY/main/emby4711/dashboard-ui/modules/themes/light/theme.css
+rm -f /opt/emby-server/system/dashboard-ui/modules/themes/light/theme.json
+wget -P https://raw.githubusercontent.com/HaloWww/EMBY/main/emby4711/dashboard-ui/modules/themes/light/theme.json
 echo "web破解完成..."
 rm -f /opt/emby-server/system/Emby.Server.Implementations.dll
-wget -P /opt/emby-server/system/ https://act.jiawei.xin:10086/tmp/emby/4.7.5.0/linux64_docker64_4.7.5/Emby.Server.Implementations.dll
+wget -P /opt/emby-server/system/ https://raw.githubusercontent.com/HaloWww/EMBY/main/emby4711/Emby.Server.Implementations.dll
 echo "Implementations替换认证..."
 # https://act.jiawei.xin:10086/tmp/emby/4.7.5.0/linux64_docker_4.7.5/dashboard-ui/devices/cameraupload.js
 # https://act.jiawei.xin:10086/tmp/emby/4.7.5.0/linux64_docker_4.7.5/dashboard-ui/livetvsetup/livetvstatus.js
