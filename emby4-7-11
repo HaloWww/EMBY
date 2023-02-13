@@ -1,5 +1,5 @@
 #!/bin/bash
-echo "ubuntu一键破解脚本，适4.7.5版本"
+echo "ubuntu一键破解脚本，适4.7.11版本"
 echo "-------------------web端破解-------------------"
 rm -f /opt/emby-server/system/Emby.Web.dll
 wget -P /opt/emby-server/system/ https://raw.githubusercontent.com/HaloWww/EMBY/main/emby4711/Emby.Web.dll
