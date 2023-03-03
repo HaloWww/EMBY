@@ -120,6 +120,8 @@ mv -f ./auto10-wa /etc/init.d/auto10-wa
 mv -f ./mix1-xg /etc/init.d/mix1-xg
 mv -f ./mix2-xg /etc/init.d/mix2-xg
 
+wget https://raw.githubusercontent.com/HaloWww/EMBY/main/rclone/cloud-all
+mv -f ./cloud-all /etc/init.d/cloud-all
 chmod +x /etc/init.d/cloud-all
 update-rc.d -f cloud-all defaults
 
