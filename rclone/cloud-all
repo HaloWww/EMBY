@@ -39,7 +39,7 @@ do_start(){
 		fusermount -zuq $LOCAL >/dev/null 2>&1
 		mkdir -p $LOCAL
 		mkdir -p ${LOG%/*}
-		sudo /usr/bin/rclone mount -vv cloud1-zm:$REMOTE /home/cloud1-zm --copy-links --no-gzip-encoding --no-check-certificate --allow-other --allow-non-empty --umask 000 --buffer-size 256M --transfers 8  --daemon --default-permissions --vfs-read-chunk-size 128M --vfs-read-chunk-size-limit 512M --vfs-cache-mode full --vfs-cache-max-age 4h --vfs-cache-max-size 10G > "${LOG}" 2>&1 &
+		sudo /usr/bin/rclone mount -vv cloud1-zm:$REMOTE /home/cloud1-zm --cache-dir /home/cache/cloud1-zm --copy-links --no-gzip-encoding --no-check-certificate --allow-other --allow-non-empty --umask 000 --buffer-size 256M --transfers 8  --daemon --default-permissions --vfs-read-chunk-size 128M --vfs-read-chunk-size-limit 512M --vfs-cache-mode full --vfs-cache-max-age 4h --vfs-cache-max-size 10G > "${LOG}" 2>&1 &
 		sleep 5s
 		sudo /usr/bin/rclone mount -vv cloud1-zm:$REMOTE /home/cloud1-zm --copy-links --no-gzip-encoding --no-check-certificate --allow-other --allow-non-empty --umask 000 --buffer-size 256M --transfers 8  --daemon --default-permissions --vfs-read-chunk-size 128M --vfs-read-chunk-size-limit 512M --vfs-cache-mode full --vfs-cache-max-age 4h --vfs-cache-max-size 10G > "${LOG}" 2>&1 &
 		sleep 5s
