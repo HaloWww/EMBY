@@ -3,45 +3,45 @@ nano /root/.config/rclone/rclone.conf
 #安装rclone
 curl https://rclone.org/install.sh | sudo bash
 #创建rclone挂载目录
-mkdir /home/cloud1-zm
-mkdir /home/cloud2-zm
-mkdir /home/cloud3-zm
-mkdir /home/cloud4-zm
-mkdir /home/cloud5-zm
-mkdir /home/cloud6-zm
-mkdir /home/cloud7-zm
-mkdir /home/cloud8-zm
-mkdir /home/cloud9-zm
-mkdir /home/cloud10-zm
-mkdir /home/cloud11-zm
-mkdir /home/cloud12-zm
-mkdir /home/cloud13-zm
-mkdir /home/cloud14-zm
-mkdir /home/cloud15-zm
-mkdir /home/cloud16-wa
-mkdir /home/cloud17-wa
-mkdir /home/cloud18-wa
-mkdir /home/cloud19-wa
-mkdir /home/cloud20-wa
-mkdir /home/cloud21-wa
-mkdir /home/cloud22-wa
-mkdir /home/cloud23-wa
-mkdir /home/cloud24-wa
-mkdir /home/cloud25-wa
-mkdir /home/auto1-wa
-mkdir /home/auto2-wa
-mkdir /home/auto3-wa
-mkdir /home/auto4-wa
-mkdir /home/auto5-wa
-mkdir /home/auto6-wa
-mkdir /home/auto7-wa
-mkdir /home/auto8-wa
-mkdir /home/auto9-wa
-mkdir /home/auto10-wa
-mkdir /home/mix1-xg
-mkdir /home/mix2-xg
-mkdir /home/mix3-xg
-mkdir /home/mix4-xg
+mkdir -p /home/cloud/cloud1-zm
+mkdir -p /home/cloud/cloud2-zm
+mkdir -p /home/cloud/cloud3-zm
+mkdir -p /home/cloud/cloud4-zm
+mkdir -p /home/cloud/cloud5-zm
+mkdir -p /home/cloud/cloud6-zm
+mkdir -p /home/cloud/cloud7-zm
+mkdir -p /home/cloud/cloud8-zm
+mkdir -p /home/cloud/cloud9-zm
+mkdir -p /home/cloud/cloud10-zm
+mkdir -p /home/cloud/cloud11-zm
+mkdir -p /home/cloud/cloud12-zm
+mkdir -p /home/cloud/cloud13-zm
+mkdir -p /home/cloud/cloud14-zm
+mkdir -p /home/cloud/cloud15-zm
+mkdir -p /home/cloud/cloud16-wa
+mkdir -p /home/cloud/cloud17-wa
+mkdir -p /home/cloud/cloud18-wa
+mkdir -p /home/cloud/cloud19-wa
+mkdir -p /home/cloud/cloud20-wa
+mkdir -p /home/cloud/cloud21-wa
+mkdir -p /home/cloud/cloud22-wa
+mkdir -p /home/cloud2/cloud23-wa
+mkdir -p /home/cloud2/cloud24-wa
+mkdir -p /home/cloud2/cloud25-wa
+mkdir -p /home/auto/auto1-wa
+mkdir -p /home/auto/auto2-wa
+mkdir -p /home/auto/auto3-wa
+mkdir -p /home/auto/auto4-wa
+mkdir -p /home/auto/auto5-wa
+mkdir -p /home/auto/auto6-wa
+mkdir -p /home/auto/auto7-wa
+mkdir -p /home/auto/auto8-wa
+mkdir -p /home/auto/auto9-wa
+mkdir -p /home/auto/auto10-wa
+mkdir -p /home/mix1-xg
+mkdir -p /home/mix2-xg
+mkdir -p /home/mix3-xg
+mkdir -p /home/mix4-xg
 
 mkdir -p /home/cache/cloud1-zm
 mkdir -p /home/cache/cloud2-zm
