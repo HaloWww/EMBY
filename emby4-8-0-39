@@ -13,4 +13,4 @@ echo "web破解完成..."
 rm -f /opt/emby-server/system/Emby.Server.Implementations.dll
 wget -P /opt/emby-server/system/ https://raw.githubusercontent.com/HaloWww/EMBY/main/emby48039/Emby.Server.Implementations.dll
 echo "Implementations替换认证..."
-wget -P /var/lib/emby-server/plugins/ https://raw.githubusercontent.com/HaloWww/EMBY/main/emby48039/MetaTube.dll
+wget -P /var/lib/emby/plugins/ https://raw.githubusercontent.com/HaloWww/EMBY/main/emby48039/MetaTube.dll
