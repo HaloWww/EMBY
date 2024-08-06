@@ -1,0 +1,16 @@
+echo "ubuntu一键破解脚本，适4.7.11版本"
+echo "-------------------web端破解-------------------"
+rm -f /opt/emby-server/system/Emby.Web.dll
+wget -P /opt/emby-server/system/ https://raw.githubusercontent.com/HaloWww/EMBY/main/emby4880/Emby.Web.dll
+rm -f /opt/emby-server/system/MediaBrowser.Model.dll
+wget -P /opt/emby-server/system/ https://raw.githubusercontent.com/HaloWww/EMBY/main/emby4880/MediaBrowser.Model.dll
+echo "核心破解完成..."
+rm -f /opt/emby-server/system/dashboard-ui/modules/emby-apiclient/connectionmanager.js
+wget -P /opt/emby-server/system/dashboard-ui/modules/emby-apiclient/ https://raw.githubusercontent.com/HaloWww/EMBY/main/emby4880/connectionmanager.js
+rm -f /opt/emby-server/system/dashboard-ui/embypremiere/embypremiere.js
+wget -P /opt/emby-server/system/dashboard-ui/embypremiere/ https://raw.githubusercontent.com/HaloWww/EMBY/main/emby4880/embypremiere.js
+echo "web破解完成..."
+rm -f /opt/emby-server/system/Emby.Server.Implementations.dll
+wget -P /opt/emby-server/system/ https://raw.githubusercontent.com/HaloWww/EMBY/main/emby4880/Emby.Server.Implementations.dll
+echo "Implementations替换认证..."
+wget -P /var/lib/emby/plugins/ https://raw.githubusercontent.com/HaloWww/EMBY/main/emby4880/MetaTube.dll
